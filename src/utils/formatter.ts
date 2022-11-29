@@ -9,3 +9,7 @@ export const titleCase = (str: string) => {
 export const formattedId = (id: number) => {
   return id.toString().padStart(3, '0');
 };
+
+export const formattedStatically = (str: string) => {
+  return `https://cdn.statically.io/img/${str.replace('https://', '')}`;
+};

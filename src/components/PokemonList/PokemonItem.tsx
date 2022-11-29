@@ -1,6 +1,6 @@
 import { getGradientBackground } from '@/theme';
 import { Pokemon } from '@/types/pokemon';
-import { formattedId, titleCase } from '@/utils/formatter';
+import { formattedId, formattedStatically, titleCase } from '@/utils/formatter';
 import { Link } from 'react-router-dom';
 import PokemonType from '../PokemonCard/PokemonType';
 
@@ -9,11 +9,11 @@ type Props = {
 };
 const PokemonItem = ({ pokemon }: Props) => {
   return (
-    <div className="relative transition duration-300 ease-in-out hover:scale-105 group">
+    <article className="relative transition duration-300 ease-in-out hover:scale-105 group">
       <div
         className={`${getGradientBackground(
           pokemon.types,
-        )} rounded-lg absolute blur-sm -inset-0.5 group-hover:opacity-100 duration-200 opacity-60`}
+        )} rounded-lg absolute blur-sm -inset-0.5 group-hover:opacity-100 duration-200 opacity-60 animate-tilt`}
       ></div>
       <div
         className={`relative rounded-lg bg-dark-jungle-green/90 text-slate-200`}
@@ -26,7 +26,7 @@ const PokemonItem = ({ pokemon }: Props) => {
           <img
             width={100}
             height={100}
-            src={pokemon.sprites.front_default}
+            src={formattedStatically(pokemon.sprites.front_default)}
             alt="pokemon"
           />
           <p className="text-xs text-gray-300">#{formattedId(pokemon.id)}</p>
@@ -34,7 +34,7 @@ const PokemonItem = ({ pokemon }: Props) => {
           <PokemonType types={pokemon.types} />
         </Link>
       </div>
-    </div>
+    </article>
   );
 };
 

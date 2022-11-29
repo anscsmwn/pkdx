@@ -1,8 +1,12 @@
 import { getPokemon, getPokemonList } from '@/services/pokemonServices';
-import { useQuery, useQueries } from 'react-query';
+import { useQuery, useQueries, useInfiniteQuery } from 'react-query';
 
 export const useGetPokemonList = () => {
-  return useQuery('pokemons', getPokemonList);
+  return useInfiniteQuery({
+    queryKey: ['pokemons'],
+    queryFn: getPokemonList,
+    getNextPageParam: (lastPage) => lastPage.data.next,
+  });
 };
 
 export const useGetPokemon = (name: string) => {

@@ -1,21 +1,21 @@
 import { useGetPokemonQueries } from '@/query-hook/usePokemon';
-import { BaseName } from '~/../types/pokemon';
-import PokemonType from '../PokemonCard/PokemonType';
+import React from 'react';
+import { BaseList } from '~/../types/pokemon';
 import PokemonItem from './PokemonItem';
 
 type Props = {
-  pokemons: BaseName[];
+  results: BaseList;
 };
 
-const PokemonList = ({ pokemons }: Props) => {
-  const pokemonNames = pokemons.map((pokemon) => pokemon.name);
-  const results = useGetPokemonQueries(pokemonNames);
+const PokemonList = ({ results }: Props) => {
+  const pokemonNames = results.results.map((result) => result.name);
+  const pokemons = useGetPokemonQueries(pokemonNames);
 
   return (
     <div className="grid grid-cols-2 gap-5 px-5 py-3">
-      {results.map(({ data }) => (
-        <>{data?.data && <PokemonItem pokemon={data.data} />}</>
-      ))}
+      {pokemons.map(({ data: { data: pokemon } = {} }) => {
+        return pokemon && <PokemonItem pokemon={pokemon} key={pokemon.id} />;
+      })}
     </div>
   );
 };
