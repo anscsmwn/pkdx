@@ -8,7 +8,7 @@ interface BasicInfoProps {
 }
 const BasicInfo = ({ pokemon }: BasicInfoProps) => {
   return (
-    <div className="flex items-center flex-col z-50 relative top-5">
+    <div className="flex items-center flex-col z-20 relative top-5">
       <img
         width={200}
         height={200}
@@ -18,7 +18,7 @@ const BasicInfo = ({ pokemon }: BasicInfoProps) => {
       />
       <h1 className="my-5 text-center text-white">{titleCase(pokemon.name)}</h1>
       <PokemonMeasurement pokemon={pokemon} />
-      <PokemonType types={pokemon.types} />
+      <PokemonType types={pokemon.types} isShow />
     </div>
   );
 };

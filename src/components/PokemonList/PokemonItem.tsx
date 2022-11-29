@@ -7,6 +7,7 @@ import PokemonType from '../PokemonCard/PokemonType';
 type Props = {
   pokemon: Pokemon;
 };
+
 const PokemonItem = ({ pokemon }: Props) => {
   return (
     <article className="relative transition duration-300 ease-in-out hover:scale-105 group">

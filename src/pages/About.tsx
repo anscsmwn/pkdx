@@ -16,6 +16,7 @@ const About = () => {
             <p>
               A simple pokedex web app built with react.js & typescript made by{' '}
               <a
+                target={'_blank'}
                 className="font-semibold"
                 href="https://anscsmwn-dev.vercel.app"
               >
@@ -26,6 +27,7 @@ const About = () => {
             <p>
               This app is open source, you can see the{' '}
               <a
+                target={'_blank'}
                 className="font-semibold"
                 href="https://github.com/aancaa/pkdx"
               >
