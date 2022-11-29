@@ -10,7 +10,7 @@
     @apply fixed bottom-0 mx-auto flex w-full max-w-md flex-row items-end;
   }
   .item-nav {
-    @apply flex w-full flex-col items-center  rounded rounded-t-md bg-night p-2 text-lg text-neutral-300 outline-dashed outline-neutral-300 transition-all;
+    @apply flex w-full flex-col items-center rounded rounded-t-md bg-white bg-opacity-20 backdrop-blur-sm p-2 text-lg text-neutral-300 outline-dashed outline-neutral-300 transition-all;
   }
   .item-nav-active {
     @apply item-nav z-10 h-16 justify-center  bg-red-500 pt-3 text-xl text-white;

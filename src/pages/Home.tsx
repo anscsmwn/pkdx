@@ -1,10 +1,13 @@
 import Layout from '@/components/Layout';
+import PokemonList from '@/components/PokemonList/PokemonList';
+import { useGetPokemonList } from '@/query-hook/usePokemon';
 import React from 'react';
 
 const Home = () => {
+  const { data } = useGetPokemonList();
   return (
     <Layout title="Home">
-      <h1>Home</h1>
+      {data?.data && <PokemonList pokemons={data?.data.results} />}
     </Layout>
   );
 };

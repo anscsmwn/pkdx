@@ -9,6 +9,7 @@ module.exports = {
         'baltic-sea': '#272727',
         'rangoon-green': '#19191B',
         'quill-grey': '#D4D4D4',
+        'dark-jungle-green': '#191B1E',
       },
     },
   },
