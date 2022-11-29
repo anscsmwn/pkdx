@@ -14,7 +14,7 @@ type Props = {
 const DetailPokemonInfo = ({ pokemon }: Props) => {
   const [activeTab, setActiveTab] = useState('stats');
   return (
-    <div>
+    <>
       <HeaderInfo pokemon={pokemon} />
       <BlurryGradientAnimate types={pokemon.types} />
       <BasicInfo pokemon={pokemon} />
@@ -24,7 +24,7 @@ const DetailPokemonInfo = ({ pokemon }: Props) => {
         {activeTab === 'moves' && <Moves pokemon={pokemon} />}
         {activeTab === 'abilities' && <Abilities pokemon={pokemon} />}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -68,7 +68,9 @@ const ModalNickname = ({
           className="text-[#c7c4c5] inline-block mb-2 text-sm"
           htmlFor="nickname"
         >
-          {`Give your ${pokemon?.name} a nickname`}
+          {isEdit
+            ? `Change ${editPokemon?.name}'s nickname`
+            : `Give your ${pokemon?.name} a nickname`}
         </label>
         <input
           name="nickname"
