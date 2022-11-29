@@ -11,6 +11,16 @@ type Ability = {
   slot: number;
 };
 
+export type AbilityDetail = {
+  name: string;
+  effect_entries: {
+    effect: string;
+    language: {
+      name: string;
+    };
+  }[];
+};
+
 type GameIndex = {
   game_index: number;
   version: BaseName;

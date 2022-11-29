@@ -125,6 +125,30 @@ export const bgColorTwo: Color = {
   },
 };
 
+export const blurry: Color = {
+  types: {
+    grass: 'bg-green-500',
+    fire: 'bg-[#F08030]',
+    water: 'bg-blue-500',
+    electric: 'bg-yellow-500',
+    ice: 'bg-[#98D8D8]',
+    normal: 'bg-[#A8A878]',
+    fighting: 'bg-[#C03028]',
+    poison: 'bg-[#A040A0]',
+    ground: 'bg-[#E0C068]',
+    flying: 'bg-[#A890F0]',
+    psychic: 'bg-[#F85888]',
+    bug: 'bg-[#A8B820]',
+    rock: 'bg-[#B8A038]',
+    ghost: 'bg-[#705898]',
+    dark: 'bg-[#705848]',
+    dragon: 'bg-[#7038F8]',
+    steel: 'bg-[#B8B8D0]',
+    fairy: 'bg-[#905F63]',
+    unkown: 'bg-[#6AA596]',
+  },
+};
+
 type Icon = {
   type: {
     [key: string]: {
@@ -202,4 +226,14 @@ export const getGradientBackground = (types: Type[]) => {
       ? `${bgColorOne.types[typeNames[0]]} ${bgColorTwo.types[typeNames[0]]}`
       : `${bgColorOne.types[typeNames[0]]} ${bgColorTwo.types[typeNames[1]]}`
   }`;
+};
+
+export const getBluryBackground = (types: Type[]) => {
+  const typeNames = types.map((type) => type.type.name);
+  return [
+    blurry.types[typeNames[0]],
+    typeNames.length === 1
+      ? blurry.types[typeNames[0]]
+      : blurry.types[typeNames[1]],
+  ];
 };

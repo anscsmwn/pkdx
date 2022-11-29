@@ -1,4 +1,4 @@
-import { BaseList, Pokemon } from '@/types/pokemon';
+import { AbilityDetail, BaseList, Pokemon } from '@/types/pokemon';
 import httpCommon from '@/utils/http-common';
 import axios from 'axios';
 
@@ -10,4 +10,8 @@ export const getPokemonList = async ({
 
 export const getPokemon = async (name: string) => {
   return httpCommon.get<Pokemon>(`/pokemon/${name}`);
+};
+
+export const getPokemonAbility = async (ability: string) => {
+  return await httpCommon.get<AbilityDetail>(`/ability/${ability}`);
 };

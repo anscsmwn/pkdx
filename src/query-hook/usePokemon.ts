@@ -1,4 +1,9 @@
-import { getPokemon, getPokemonList } from '@/services/pokemonServices';
+import {
+  getPokemon,
+  getPokemonAbility,
+  getPokemonList,
+} from '@/services/pokemonServices';
+import httpCommon from '@/utils/http-common';
 import { useQuery, useQueries, useInfiniteQuery } from 'react-query';
 
 export const useGetPokemonList = () => {
@@ -20,4 +25,16 @@ export const useGetPokemonQueries = (name: string[]) => {
       queryFn: () => getPokemon(name),
     })),
   );
+};
+
+export const useGetPokemonAbility = (ability: string) => {
+  const { data, isError, isLoading } = useQuery(
+    ['ability', ability],
+    () => getPokemonAbility(ability),
+    {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  );
+  return { data, isError, isLoading };
 };

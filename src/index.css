@@ -10,9 +10,39 @@
     @apply fixed bottom-0 mx-auto flex w-full max-w-md flex-row items-end;
   }
   .item-nav {
-    @apply flex w-full flex-col items-center rounded rounded-t-md bg-white bg-opacity-20 backdrop-blur-sm p-2 text-lg text-neutral-300 outline-dashed outline-neutral-300 transition-all;
+    @apply flex w-full flex-col items-center rounded rounded-t-md bg-white bg-opacity-5 backdrop-blur-sm p-2 text-lg text-neutral-300 outline-dashed outline-neutral-300 transition-all;
   }
   .item-nav-active {
     @apply item-nav z-10 h-16 justify-center  bg-red-500 pt-3 text-xl text-white;
+  }
+  .detail-container {
+    @apply mt-10 flex h-full flex-grow flex-col rounded-t-2xl border-4 border-[#272727] px-5 pt-5 pb-20 text-[#D4D4D4];
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold md:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold md:text-3xl;
+  }
+
+  h4 {
+    @apply text-lg font-bold md:text-xl;
+  }
+}
+
+@layer utilities {
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
   }
 }
