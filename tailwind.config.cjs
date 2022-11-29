@@ -8,6 +8,7 @@ module.exports = {
         night: '#0D0F12',
         'baltic-sea': '#272727',
         'rangoon-green': '#19191B',
+        'quill-grey': '#D4D4D4',
       },
     },
   },
