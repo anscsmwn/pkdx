@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 const About = () => {
   return (
     <Layout title="About">
-      <div className="flex flex-col space-y-3 min-h-screen items-center justify-center text-quill-grey">
+      <div className="flex flex-col space-y-3 min-h-screen items-center  pt-20 text-quill-grey">
         <img
           className="mx-auto w-36"
           width={200}

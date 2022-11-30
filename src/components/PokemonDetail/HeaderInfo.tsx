@@ -11,7 +11,7 @@ interface HeaderInfoProps {
 const HeaderInfo = ({ pokemon }: HeaderInfoProps) => {
   const navigate = useNavigate();
   return (
-    <div className="relative flex w-full items-center justify-between px-6 pt-7 text-white z-50">
+    <div className="relative flex w-full items-center justify-between px-2 pt-7 text-white z-50">
       <button
         className="hover:bg-neutral-800 p-2 transition-all rounded-md"
         onClick={() => {

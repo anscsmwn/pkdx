@@ -1,6 +1,7 @@
 import { useGetPokemonAbility } from '@/query-hook/usePokemon';
 import { Pokemon } from '@/types/pokemon';
 import { titleCase } from '@/utils/formatter';
+import Loading from './Loading';
 
 interface AbilitiesProps {
   pokemon: Pokemon;
@@ -22,7 +23,11 @@ const Abilities = ({ pokemon }: AbilitiesProps) => {
         return (
           <div key={ability?.name} className="my-2">
             <p className="text-lg font-semibold">{titleCase(ability?.name!)}</p>
-            <p className="mt-1 text-sm">{ability_desc}</p>
+            {results.isLoading ? (
+              <Loading />
+            ) : (
+              <p className="mt-1 text-sm">{ability_desc}</p>
+            )}
           </div>
         );
       })}
